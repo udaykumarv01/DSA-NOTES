@@ -1,1 +1,121 @@
-https://chatgpt.com/share/69c40c93-aa40-8324-b0fe-5f7dfe5bc669
+Here are clear, exam-ready notes on Time Complexity and Space Complexity in Python, written in a simple and structured way 👇
+
+📘 TIME COMPLEXITY (Python)
+🔹 What is Time Complexity?
+
+Time complexity measures how fast an algorithm runs based on input size n.
+
+It tells how the execution time grows when input increases.
+
+🔹 Common Time Complexities
+Complexity	Name	Example
+O(1)	Constant	Access element
+O(log n)	Logarithmic	Binary Search
+O(n)	Linear	Loop
+O(n log n)	Linear Log	Merge Sort
+O(n²)	Quadratic	Nested loops
+O(2ⁿ)	Exponential	Recursion (subset)
+🔹 Python Examples
+✅ O(1) – Constant Time
+arr = [1, 2, 3, 4]
+print(arr[2])   # direct access
+✅ O(n) – Linear Time
+for i in range(n):
+    print(i)
+✅ O(n²) – Quadratic Time
+for i in range(n):
+    for j in range(n):
+        print(i, j)
+✅ O(log n) – Logarithmic (Binary Search)
+def binary_search(arr, target):
+    left, right = 0, len(arr)-1
+    while left <= right:
+        mid = (left + right)//2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+🔹 Rules to Calculate Time Complexity
+Single loop → O(n)
+Nested loops → O(n²)
+Divide problem → O(log n)
+
+Ignore constants
+
+O(2n + 5) → O(n)
+Keep worst case
+📘 SPACE COMPLEXITY (Python)
+🔹 What is Space Complexity?
+
+Space complexity measures how much memory an algorithm uses.
+
+Includes:
+
+Variables
+Data structures
+Recursion stack
+🔹 Types of Space
+1. Input Space
+
+Memory used by input
+
+2. Auxiliary Space
+
+Extra memory used (important for exams)
+
+🔹 Python Examples
+✅ O(1) – Constant Space
+a = 10
+b = 20
+c = a + b
+✅ O(n) – Linear Space
+arr = []
+for i in range(n):
+    arr.append(i)
+✅ O(n) – Recursion Stack
+def func(n):
+    if n == 0:
+        return
+    func(n-1)
+🔹 Key Points
+List/Array of size n → O(n) space
+Recursion depth n → O(n) space
+Variables → usually O(1)
+📘 TIME vs SPACE TRADE-OFF
+
+Sometimes:
+
+Faster code uses more memory
+Less memory uses more time
+
+Example:
+
+# Faster (uses extra space)
+seen = set(arr)
+
+# Slower (no extra space)
+for i in range(len(arr)):
+    for j in range(i+1, len(arr)):
+        pass
+📘 QUICK SUMMARY
+Time complexity → speed
+Space complexity → memory
+Always aim for:
+Lower time
+Optimized space
+📘 INTERVIEW TIPS
+
+✔ Always mention:
+
+Best case
+Worst case
+Space used
+
+✔ Focus on:
+
+Arrays
+Strings
+Hashmaps (dict, set)
+Recursion
